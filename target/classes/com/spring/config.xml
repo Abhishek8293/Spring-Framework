@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xmlns:p="http://www.springframework.org/schema/p"
     xsi:schemaLocation="
-        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- bean definitions here -->
     
-    <bean class="com.spring.entity.Employee" name="employee">
-		<property name="empId"><value>1</value></property>
-		<property name="empName"><value>emp1</value></property>
-		<property name="email"><value>emp1@gmail.com</value></property>
+    <bean class="com.spring.entity.Employee" name="emp1">
+		<!-- Field injection-->
+		<property name="empId" value="1" />
+		<property name="empName" value="emp1" />
+		<property name="email" value="emp1@gmail.com" />
+		<!--Constructor injection-->
+		<!-- <constructor-arg value="1" type="Integer"/>
+		<constructor-arg value="emp1" type="String"/>
+		<constructor-arg value="abc@gmail.com" type="String"/>-->
 	</bean>
+	
+	<bean class="com.spring.entity.Address" name="address" autowire="byName">
+		<!-- Field injection-->
+		<property name="rno" value="11" />
+		<property name="city" value="Raipur" />
+		<property name="pincode" value="492015" />
+	</bean>
+	
+	
     
 
 </beans>
