@@ -5,16 +5,16 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-@Component("person")
+@Component("person") //It tells the spring framework to make & manage the bean of this class with the specified bean name.
 public class PersonEntity {
 
-	@Value("1")
+	@Value("1") //Property Value
 	private int personId;
 
 	@Value("John Doe")
 	private String personName;
 
-	@Value("#{banklist}")
+	@Value("#{banklist}") // Injected the Standlone collection with id = banklist in xml file.
 	private List<String> accounts;
 
 	public int getPersonId() {
