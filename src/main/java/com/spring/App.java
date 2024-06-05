@@ -14,9 +14,7 @@ public class App
         Employee emp =context.getBean("emp1",Employee.class);
         System.out.println(emp);
         
-        Address address = context.getBean("address",Address.class);
-        System.out.println(address);
         
-        
+        	 	
     }
 }

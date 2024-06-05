@@ -1,10 +1,17 @@
 package com.spring.entity;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+
 public class Employee {
 
 	private Integer empId;
 	private String empName;
 	private String email;
+
+	@Autowired
+	@Qualifier("address2")
+	private Address address;
 
 	public Employee(Integer empId, String empName, String email) {
 		super();
@@ -40,10 +47,20 @@ public class Employee {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+//
+//	public Address getAddress() {
+//		return address;
+//	}
+
+//	public void setAddress(Address address) {
+//		this.address = address;
+//	}
 
 	@Override
 	public String toString() {
-		return "Employee [empId=" + empId + ", empName=" + empName + ", email=" + email + "]";
+		return "Employee [empId=" + empId + ", empName=" + empName + ", email=" + email + ", address=" + address + "]";
 	}
+
+	
 
 }
