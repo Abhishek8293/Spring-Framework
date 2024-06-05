@@ -2,15 +2,16 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:c="http://www.springframework.org/schema/c"
     xsi:schemaLocation="
         http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context
-        http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/context/spring-context.xsd ">
         
-    <!-- bean definitions here -->
-        <context:annotation-config/>
-    
+    <!-- bean definitions here  -->
+        
+    <context:annotation-config/>
     <bean class="com.spring.entity.Address" name="address1" >
 		<!-- Field injection-->
 		<property name="rno" value="11" />
@@ -31,10 +32,5 @@
 		<property name="empName" value="emp1" />
 		<property name="email" value="emp1@gmail.com" />
 	</bean>
-	
-	
-	
-	
-    
 
 </beans>
